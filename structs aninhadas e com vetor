@@ -1,0 +1,94 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+struct tp_endereco{
+   char rua[40];
+   int numero;
+   char bairro[40];
+   char cidade[40];
+   char estado[3];
+   int cep;
+};
+
+struct tp_data_nascimento
+{
+int dia;
+int mes;
+int ano;
+};
+
+struct cadastro_cliente{
+    char nome_cliente[40];
+    int telefone;
+    struct tp_endereco endereco;
+    struct tp_data_nascimento data_nascimento;
+
+}
+cad_cliente[2];
+
+ int main(void) {
+
+   int i;
+   printf("cadastro do cliente\n\n");
+
+   for(i= 0; i <2; i++)
+   {
+      printf("nome do cliente: ");
+      fflush(stdin);
+      gets(cad_cliente[i].nome_cliente);
+
+      printf("\ndigite o telefone do cliente:");
+      scanf("%d", &cad_cliente[i].telefone);
+
+      printf("\ndigite a rua: ");
+      fflush(stdin);
+      gets(cad_cliente[i].endereco.rua);
+
+      printf("\ndigite o numero: ");
+      scanf("%d", &cad_cliente[i].endereco.numero);
+
+      printf("\nbairro: ");
+      fflush(stdin);
+      gets(cad_cliente[i].endereco.bairro);
+
+      printf("\ncidade: ");
+      fflush(stdin);
+      gets(cad_cliente[i].endereco.cidade);
+
+      printf("\nestado: ");
+      fflush(stdin);
+      gets(cad_cliente[i].endereco.estado);
+
+      printf("\ncep: ");
+      scanf("%d", &cad_cliente[i].endereco.cep);
+
+      printf("\ndata de nascimento: ");
+      scanf("%d", &cad_cliente[i].data_nascimento.dia);
+
+      printf("\nmes de nascimento: ");
+      scanf("%d", &cad_cliente[i].data_nascimento.mes);
+
+      printf("\nano de nascimento: ");
+      scanf("%d", &cad_cliente[i].data_nascimento.ano);
+   }
+
+for(i= 0; i <2; i++)
+{
+
+   printf("\nnome: %s", cad_cliente[i].nome_cliente);
+   printf("\nrua: %s", cad_cliente[i].endereco.rua);
+   printf("\nnumero: %d", cad_cliente[i].endereco.numero);
+   printf("\nbairro: %s", cad_cliente[i].endereco.bairro);
+   printf("\ncidade: %s", cad_cliente[i].endereco.cidade);
+   printf("\n estado: %s", cad_cliente[i].endereco.estado);
+   printf("\ncep: %d", cad_cliente[i].endereco.cep);
+   
+   printf("\n dia de nasc: %d", cad_cliente[i].data_nascimento.dia);
+   printf("\nmes do nasc: %d", cad_cliente[i].data_nascimento.mes);
+   printf("\nano de nasc: %d", cad_cliente[i].data_nascimento.ano);
+
+
+}
+system("pause");
+return 0;
+ }
